@@ -1,0 +1,2 @@
+-- Reservada para la fase correspondiente. No se registra como aplicada todavía.
+-- Los roles y las sesiones de la fase 1 se crean en 001_esquema.sql.

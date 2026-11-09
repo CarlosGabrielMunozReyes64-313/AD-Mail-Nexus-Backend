@@ -1,5 +1,19 @@
 [project]
 name = "ad-mail-nexus-backend"
 version = "0.1.0"
-requires-python = ">=3.14"
-dependencies = []
+description = "AD Mail Nexus Manager — fase 1"
+requires-python = ">=3.14,<3.15"
+dependencies = ["fastapi>=0.115", "uvicorn>=0.34", "asyncpg>=0.31", "pydantic>=2.12", "pydantic-settings>=2.10", "httpx>=0.28", "argon2-cffi>=25.1", "holidays>=0.80"]
+[dependency-groups]
+dev = ["pytest>=8.4", "pytest-asyncio>=1.2", "ruff>=0.14"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["integracion: necesita TEST_DATABASE_URL (base exclusiva de pruebas)"]
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
